@@ -206,12 +206,24 @@ def breakf():
         ppb.pprint(b)
         
 def lisc():
+    import pymongo
+    from pymongo import MongoClient
     import random
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    mydb = myclient["mydatabase"]
+
+    coll3 = mydb["menus"]
     key = input("Enter Name:")
     value = input("Enter Address:")
 
     mydict = {}
-    mydict.update({key:value})
+    dic = {"John": "405 Longwood Dr"}
+    mydict.update({"$set":{key:value}})
+
+    coll3.update_one(dic, mydict)
+    for x in coll3.find():
+        print(x)
+    
     if len(mydict) >= 0:
         x= random.sample(range(1,10),9)
         print(mydict)
