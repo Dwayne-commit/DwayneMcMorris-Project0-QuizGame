@@ -1,0 +1,20 @@
+{
+    "books": [
+        {
+            "name": "C++ Programming Programming Design Including Data Structures",
+            "price": "102.00$",
+            "bar-code": "978-1337117562"
+        },
+        {
+            "name":"Programming Python: Powerful Object-Oriented Programming Fourth Edition",
+            "price": "47.83$",
+            "bar-code": "978-0596158101"
+        },
+        {
+            "name": "Web Programming and Internet Technologies: An E-Commerce Approach 2nd Edition",
+            "price": "68.75$",
+            "bar-code": "978-1284070682"
+            
+        }
+    ]
+}

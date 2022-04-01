@@ -1,0 +1,53 @@
+"gui" : {"system-tray":true,"clipboard":true}
+"What's For Lunch...": {
+            "gname": "What's For Lunch...",
+            "gorder": "600",
+            "sub_gname": "",
+            "items": {
+                "0": {
+                    "name": "TILAPIA OREGANATO - SERVED OVER WHITE RICE WITH SPINACH",
+                    "price": "8.50"
+                },
+                "1": {
+                    "name": "RIGATONI WITH EGGPLANT - A DELICIOUS DISH OF RIGATONI, IN OUR HOMEMADE MARINARA SAUCE, WITH FRESH EGGPLANT SERVED WITH GARLIC BREAD",
+                    "price": "7.50"
+                },
+                "2": {
+                    "name": "PHILLY CHEESESTEAK - TENDER SLICED GRILLED ROAST BEEF SMOTHERED WITH MELTED AMERICAN CHEESE AND SAUTEED ONIONS ON A FRESH BAKED ROLL $7.50, OR WEDGE",
+                    "price": "8.50"
+                },
+                "3": {
+                    "name": "POTATO AND EGG OR PEPPER AND EGG SANDWICH - FRESH SCRAMBLED EGGS MIXED WITH FRESH SLICED PEPPERS OR POTATOES SERVED ON A FRESH BAKED KAISER ROLL",
+                    "price": "5.00"
+                },
+                "4": {
+                    "name": "FISH FILET SANDWICH - BREADED FILET OF FLOUNDER, COOKED 'TIL GOLDEN BROWN, TOPPED WITH TARTAR SAUCE SERVED ON A KAISER ROLL $6.50, OR WEDGE",
+                    "price": "7.50"
+                }
+            }
+        },
+        "Today's Wrap": {
+            "gname": "Today's Wrap",
+            "gorder": "900",
+            "sub_gname": "",
+            "items": {
+                "0": {
+                    "name": "BLAZING BUFFALO CHICKEN WRAP - BUFFALO CHICKEN STRIPS W/ MONTEREY PEPPERJACK CHEESE, ROMAINE, ONIONS AND BLEU CHEESE DRESSING IN A WRAP",
+                    "price": "8.50"
+                }
+            }
+        },
+        "Today's Panini": {
+            "gname": "Today's Panini",
+            "gorder": "1200",
+            "sub_gname": "",
+            "items": {
+                "0": {
+                    "name": "THE SHRUME PANINI - PORTABELLO MUSHROOMS, SPINACH, ASIAGO CHEESE AND CARAMELIZED ONIONS",
+                    "price": "8.50"
+                }
+            }
+        }
+    },
+    "trivia": "Supposedly, one of the first shipments of bananas to reach the colonies was in 1690 at Salem, Mass.\r\n"
+}
