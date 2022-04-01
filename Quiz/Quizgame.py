@@ -50,10 +50,10 @@ def too():
                 fc.upper()
                 if fc == "Breakfast":
                     breakf()
-                    print("Choose from the menu")
+                    print("Choose from the menu:")
                 elif fc == "Lunch":
                     men1()
-                    print("Choose from the menu")
+                    print("Choose from the menu:")
                 else:
                     print("Here's a Shake!")
         
@@ -70,10 +70,10 @@ def too():
                 fc.upper()
                 if fc == "Breakfast":
                     breakf()
-                    print("Choose from the menu")
+                    print("Choose from the menu:")
                 elif fc == "Lunch":
                     men1()
-                    print("Choose from the menu")
+                    print("Choose from the menu:")
                 else:
                     print("Here's a Shake!")
                     
@@ -160,8 +160,9 @@ def end_game():
     response = input("Do you want to play again? (yes or no): ")
     response = response.upper()
 
-    if response == "YES":
+    if response == "Yes":
         return True
+        return too()
     else:
         return False
 # -------------------------
@@ -191,8 +192,11 @@ def breakf():
         {"title":"bacon overflow", "category":"breakfast", "price": "8.99", "img": "./images/item-7.jpeg"},
         {"title":"quarantine buddy", "category":"shakes", "price": "9.99", "img": "./images/item-9.jpeg"}
         ]
+    
+    
     y = coll.delete_many({})
     x = coll.insert_many(list1)
+    
     #print(x.inserted_ids)
 
     #print(myclient.list_database_names())
@@ -208,17 +212,29 @@ def lisc():
 
     mydict = {}
     mydict.update({key:value})
-    x= random.sample(range(1,10),9)
-    print(mydict)
-    print("No.")
-    for i in x:
-        print(i, end = '')
+    if len(mydict) >= 0:
+        x= random.sample(range(1,10),9)
+        print(mydict)
+        print("No.")
+        for i in x:
+            print(i, end = '')
+        an = input(("Are you interested in Python: Enter yes or no"))
+        an.upper()
+        if an == "Yes":
+            print("Here's: Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction")
+        else:
+            print("Ok")
+    else:
+        print("Invalid Id")
+        print("Try Better Next Time")
+        end_game()
 
 
 
 def men1():
     import json
     import pprint
+    
     f1 = open('Lunch.json')
     data1 = json.load(f1)
     for i in data1['Menu']:
@@ -235,6 +251,22 @@ def book():
         pp1 = pprint.PrettyPrinter(width=41, compact=True)
         pp1.pprint(i)
     f2.close()
+
+
+def upl():
+    import pymongo
+    import json
+    from pymongo import MongoClient, InsertOne
+    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    db = myclient["mydatabase"]
+    collection = mydb["menus"]
+    requesting = []
+    with open(r"<jsonviewr.json>") as f:
+        for jsonObj in f:
+            myDict = json.loads(jsonObj)
+            requesting.append(InsertOne(myDict))
+        result = collection.bulk_write(requesting)
+        client.close()
 
 
 
