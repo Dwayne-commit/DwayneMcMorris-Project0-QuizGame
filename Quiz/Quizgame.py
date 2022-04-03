@@ -122,7 +122,8 @@ def too():
         print("Try Again")
     print("After a long day you decide to head home and go to sleep.")
     end_game()
-        
+    upl()
+       
 
 # -------------------------
 def check_(answer, guess):
@@ -269,16 +270,58 @@ def upl():
     import pymongo
     import json
     from pymongo import MongoClient, InsertOne
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+    with open('jsonviewer.json') as f:
+        data4 = json.load(f)
+        
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     db = myclient["mydatabase"]
-    collection = mydb["menus"]
-    requesting = []
-    with open(r"<jsonviewr.json>") as f:
+    collection = db["menus"]
+
+    
+
+    l = collection.insert_one(data4)
+    for y in collection.find():
+        print(y)
+
+    x = int(input("Enter 1 or 2 to update"))
+
+    if x == 1:
+        d = collection.delete_many({})
+        print(d.deleted_count, " documents deleted.")
+    elif x == 2:
+        key1 = str(input())
+        value1 = str(input())
+        emp = {}
+        myDict = {"John": "405 Longwood Dr"}
+        emp.update({"$set":{key1:value1}})
+        collection.update_one(myDict, emp)
+        for u in collection.find():
+             print(u)
+    else:
+        print("Sorry")
+        
+
+        
+        
+
+  
+       
+                               
+    
+        
+
+    
+
+    """with open(r"jsonviewer.json") as f:
         for jsonObj in f:
-            myDict = json.loads(jsonObj)
+            myDict = {}
+            myDict.update(json.loads(json.dumps(jsonObj)))
             requesting.append(InsertOne(myDict))
         result = collection.bulk_write(requesting)
-        client.close()
+    for i in collection["menus"]:
+        print(i)
+    client.close()"""
 
 
 
